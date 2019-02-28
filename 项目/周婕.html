@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/common.js"></script>
+    <script src="js/jquery-1.8.2.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 50%;
+            height: 100px;
+        }
+        table,th, td{
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: top;
+        }
+
+    </style>
+</head>
+<body>
+<table id="tab">
+<tr>
+    <th><input type="button" value="删除" id="shanchu"></th>
+    <th>序号</th>
+    <th>姓名</th>
+    <th>年龄 <input type="button" value="排序" id="paixu"></th>
+    <th>籍贯 <input type="button" value="筛选"></th>
+</tr>
+    <tbody id="tb">
+<tr class="ipt" >
+    <td><input type="checkbox" ></td>
+    <td>1</td>
+    <td>张三</td>
+    <td>24</td>
+    <td>北京</td>
+</tr>
+<tr class="ipt" >
+    <td><input type="checkbox"></td>
+    <td>2</td>
+    <td>李斯</td>
+    <td>43</td>
+    <td>陕西</td>
+</tr>
+<tr class="ipt" >
+    <td><input type="checkbox"></td>
+    <td>3</td>
+    <td>韩信</td>
+    <td>49</td>
+    <td>湖北</td>
+</tr>
+<tr class="ipt" >
+    <td><input type="checkbox"></td>
+    <td>4</td>
+    <td>宋江</td>
+    <td>43</td>
+    <td>山东</td>
+</tr>
+<tr class="ipt" >
+    <td><input type="checkbox"  ></td>
+    <td>5</td>
+    <td>李逵</td>
+    <td>38</td>
+    <td>青海</td>
+</tr>
+<tr class="ipt" >
+    <td><input type="checkbox" ></td>
+    <td>6</td>
+    <td>林冲</td>
+    <td>42</td>
+    <td>北京</td>
+</tr>
+    </tbody>
+</table>
+</body>
+<script>
+    var shanchu=document.getElementById("shanchu");
+    var inputs=document.querySelectorAll("#tb input");
+    shanchu.onclick=function () {
+        for(var i=0;i<inputs.length;i++){
+            if(inputs[i].checked == true){
+                inputs[i].closest(".ipt").style.display="none";
+            }
+
+        }
+    }
+</script>
+
+
+
+
+</html>
